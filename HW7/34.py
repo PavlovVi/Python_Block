@@ -20,7 +20,7 @@ for phrase in phrases:
     words = phrase.split('-')
     syllable_count = 0
     for word in words:
-        syllable_count += sum(1 for letter in word if letter.lower() in vowels)
+        syllable_count += sum(letter in vowels for letter in word.lower())
     syllables.append(syllable_count)
 
 if syllables.count(syllables[0]) == len(syllables):
